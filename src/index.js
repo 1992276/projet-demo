@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+let noms =[
+  "a","b","c"
+];
+function Etudiant(pros){
+  return (
+    <h1>prenom   {pros.prenom} famille {pros.famille}</h1>
+  );
+}
+function Matricule(pros){
+  return(<h1>Matricule {pros.matricle} </h1>);
+}
+
+function App(props){
+  return(
+    <ul>{props.nums.map(n=><li>{n}</li>)}</ul>
+  );
+
+}
+
+  
+
+
+ 
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App nums={["1","2"]}/>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
